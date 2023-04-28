@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introdução do Vue.js</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Utilizando funções/metodos</h1>
+      <p>{{ paragrafo }}</p>
+      <p>{{ frase() }}</p>
+      <h3>Trabalhando com calculo</h3>
+      <p>A soma de 2 + 5 é igual: {{ soma() }}</p>
+      <!-- Passagem de parâmetro por referência -->
+      <p>A multiplicação de 2 vezes 5 é igual: {{ multi(2, 5) }}</p>
+    </div>
+
+    <script>
+      //Desestruturação para extrair a propriedade createApp do objeto Vue
+      const { createApp } = Vue;
+
+      createApp({
+        //Cria um função de dados
+        data() {
+          return {
+            paragrafo: "Vamos trabalhar com methods",
+          }; //retorna o valor dos dados necessários
+        },
+        methods: {
+          frase: () => {
+            return "O retorno da nossa primeira função";
+          },
+          soma: () => {
+            let x = 2;
+            let y = 5;
+            return x + y;
+          },
+          multi: (x, y) => {
+            let num1 = x;
+            let num2 = y;
+            return num1 * num2;
+          }
+        },
+      }).mount("#app"); //elemento que vamos utilizar através do id
+    </script>
+  </body>
+</html>
+

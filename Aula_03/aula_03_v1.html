@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introdução do Vue.js</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Olá {{ nome }}</h1>
+      <p>{{ titulo }}</p>
+      <p>{{ paragrafo }}</p>
+    </div>
+
+    <script>
+      //Desestruturação para extrair a propriedade createApp do objeto Vue
+      const { createApp } = Vue;
+
+      createApp({
+        //Cria um função de dados
+        data() {
+          return {
+            titulo: "Bem vindo ao VueJS!",
+            paragrafo: "Estamos utilizando a versão 3",
+            nome: "Leonardo"
+          }; //retorna o valor dos dados necessários
+        },
+      }).mount("#app"); //elemento que vamos utilizar através do id
+    </script>
+  </body>
+</html>

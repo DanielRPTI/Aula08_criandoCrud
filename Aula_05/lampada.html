@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Aula 05</title>
+</head>
+<body>
+    <div id="app" class="app">
+        
+        <div class="Lampada">
+            <button @click="toggleLampada">{{ isOnOff ? 'Desligar' : 'Ligar' }}</button>
+            <br>
+            <img v-if="isOnOff" src="./LampadaLigada.png" alt="Lâmpada Acesa">
+            <img v-else="isOnOff" src="./LampadaDesligada.png" alt="Lâmpada Apagada">
+        </div>
+    </div>
+    <script src="lampada.js"></script>
+</body>
+</html>
